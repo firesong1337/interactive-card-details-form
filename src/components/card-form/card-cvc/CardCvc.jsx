@@ -12,13 +12,14 @@ const CardCvc = ({ cvcinfo, setCvcInfo, setIsCvcValid}) => {
       }
     }
   return (
-    <label>
-      <p>CVC</p>
+    <label className="card-data-cvc">
+      <span className="card-data-desc">CVC</span>
       <input
         type="text"
         value={cvcinfo.cvc}
         onChange={cvcHandler}
         placeholder="123"
+        className="card-data-cvc-input"
       />
       {!isCvcValid && (
         <p className="error-message">Обязательно для заполнения и должно содержать 3 цифры.</p>

@@ -18,11 +18,12 @@ const CardOwner = ({ownerinfo, setOwnerInfo, setIsCardOwnerValid}) => {
     
     return (
         <label className="card-data-item">
-            <p>CARDHOLDER NAME</p>
+            <span className="card-data-desc">CARDHOLDER NAME</span>
             <input type="text"
             value={ownerinfo.owner}
             onChange={ownerHandler}
             placeholder="John Doe"
+            className="card-data-main-input"
             />
           {!isOwnerValid && (
             <p className="error-message">Неверный формат.</p>

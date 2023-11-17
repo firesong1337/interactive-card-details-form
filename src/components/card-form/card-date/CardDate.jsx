@@ -32,22 +32,28 @@ const CardDate = ({dateinfo, setDateInfo, setIsCardDateValid}) => {
     setIsCardDateValid(isCardMonthValid && isCardYearValid)
     console.log([isCardMonthValid ,isCardYearValid])
     return(
-        <label className="card-data-dateitem">
-            <p>EXP.DATE (MM/YY)</p>
-              <input
-              type="text"
-              value={dateinfo.expiryMonth}
-              onChange={monthHandler}
-              placeholder="12"/>
-              <input 
-              type="text"
-              value={dateinfo.expiryYear}
-              onChange={yearHandler}
-              placeholder="23"/>
-              {(!isCardMonthValid || !isCardYearValid) && (
-            <p className="error-message">Card Expired</p>
-            )}
-          </label>
+        <label className="card-data-date">
+                <span className="card-data-desc">EXP. DATE(MM/YY)</span>
+            <div className="card-data-date-items">
+                <input
+                type="text"
+                value={dateinfo.expiryMonth}
+                onChange={monthHandler}
+                placeholder="12"
+                className="card-data-date-input"/>
+                <input 
+                type="text"
+                value={dateinfo.expiryYear}
+                onChange={yearHandler}
+                placeholder="23"
+                className="card-data-date-input"/>
+                {(!isCardMonthValid || !isCardYearValid) && (
+                <p className="error-message">Card Expired</p>
+                )}
+                
+            </div>
+            </label>
+              
     )
 }
 export default CardDate;

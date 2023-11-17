@@ -1,31 +1,121 @@
 .card-form {
-    width: 90%;
+    margin-top: 80px;
+    width: 100%;
+    padding: 16px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    background-color: yellow;
+    font-size: 14px;
+    gap: 16px;
 }
 
 .card-data-main {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
-    background-color: skyblue;
     width: 100%;
 
 }
 .card-data-item {
-    margin: 5px 0;
+    margin: 8px 0;
 }
-.card-data-dateitem input{
-    width:40%;
+.card-data-desc {
+    letter-spacing: 2px;
+    font-size: 12px;
+    color: hsl(278, 68%, 11%);
 }
-.card-data-common {
-    background-color: orange;
+.card-data-main-input {
+    margin-top: 6px;
+    width: 100%;
+    padding: 7px 12px;
+    color: hsl(279, 6%, 55%);
+    font-size: 18px;
+    border-radius: 6px;
+    border: 1px solid hsl(270, 3%, 87%)
+}
+
+/*
+.card-data-common-descs {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-start;
+    gap: 25px
+}
+.card-data-common-inputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+*/
+.card-data-date {
+    display: flex;
+    flex-direction: column;
+}
+.card-data-date-items {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+.card-data-cvc {
+    display: flex;
+    flex-direction: column;
+    width: 140%;
+}
+.card-data-date-input{
+    margin-top: 6px;
+    width: 45%;
+    padding: 7px 12px;
+    color: hsl(279, 6%, 55%);
+    font-size: 18px;
+    border-radius: 6px;
+    border: 1px solid hsl(270, 3%, 87%)
+}
+.card-data-cvc-input{
+    margin-top: 6px;
     width: 100%;
+    padding: 7px 12px;
+    color: hsl(279, 6%, 55%);
+    font-size: 18px;
+    border-radius: 6px;
+    border: 1px solid hsl(270, 3%, 87%)
+}
+.card-data-common {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 0 0 16px 0;
+}
+
+
+
+.card-confirm-btn {
+    width: 100%;
+    padding: 15px 44px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(278, 68%, 11%);
+    border: none;
+    border-radius: 6px;
+}
+.card-confirm-btn:disabled {
+    background-color: hsl(277, 6%, 45%);
+}
+
+.success-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    color: hsl(278, 68%, 11%);
+}
+.card-confirm-message {
+    color: hsl(279, 6%, 55%);
+    font-size: 18px;
+}
+.error-message {
+    color: red;
 }

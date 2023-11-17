@@ -1,7 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .app {
-    padding: 12px;
+    font-family: 'Space Grotesk';
     width: 100%;
-    margin: 20px;
-    background-color: red;
+    background-color: hsl(0, 0%, 100%);
 }
 
