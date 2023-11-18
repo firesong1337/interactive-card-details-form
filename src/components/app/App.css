@@ -9,3 +9,9 @@
     background-color: hsl(0, 0%, 100%);
 }
 
+@media screen and (min-width: 1440px) {
+    .app {
+        display: flex;
+        flex-direction: row;
+    }
+}

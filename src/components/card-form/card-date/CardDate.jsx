@@ -1,4 +1,5 @@
 import { useState } from "react"
+import './CardDate.css'
 
 const CardDate = ({dateinfo, setDateInfo, setIsCardDateValid}) => {
     const [isCardMonthValid, setIsMonthValid] = useState(true)
@@ -30,29 +31,27 @@ const CardDate = ({dateinfo, setDateInfo, setIsCardDateValid}) => {
         setIsYearValid(isYearValid)
     }
     setIsCardDateValid(isCardMonthValid && isCardYearValid)
-    console.log([isCardMonthValid ,isCardYearValid])
     return(
         <label className="card-data-date">
-                <span className="card-data-desc">EXP. DATE(MM/YY)</span>
+            <span className="card-data-desc">EXP. DATE(MM/YY)</span>
             <div className="card-data-date-items">
                 <input
                 type="text"
                 value={dateinfo.expiryMonth}
                 onChange={monthHandler}
-                placeholder="12"
+                placeholder="MM"
                 className="card-data-date-input"/>
                 <input 
                 type="text"
                 value={dateinfo.expiryYear}
                 onChange={yearHandler}
-                placeholder="23"
+                placeholder="YY"
                 className="card-data-date-input"/>
-                {(!isCardMonthValid || !isCardYearValid) && (
+            </div>
+            {(!isCardMonthValid || !isCardYearValid) && (
                 <p className="error-message">Card Expired</p>
                 )}
-                
-            </div>
-            </label>
+        </label>
               
     )
 }

@@ -1,0 +1,26 @@
+.card-data-date {
+    display: flex;
+    flex-direction: column;
+}
+.card-data-date-items {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+.card-data-date-input{
+    margin-top: 6px;
+    width: 45%;
+    padding: 7px 12px;
+    color: hsl(279, 6%, 55%);
+    font-size: 18px;
+    border-radius: 6px;
+    border: 1px solid hsl(270, 3%, 87%)
+}
+
+@media screen and (min-width: 1440px) {
+    .card-data-date-input{
+        margin-top: 6px;
+        padding: 10px 15px;
+        font-size: 18px;
+    }
+}

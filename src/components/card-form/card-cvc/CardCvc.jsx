@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './CardCvc.css'
 
 const CardCvc = ({ cvcinfo, setCvcInfo, setIsCvcValid}) => {
   const [isCvcValid, setCvcValid] = useState(true);
@@ -18,11 +19,11 @@ const CardCvc = ({ cvcinfo, setCvcInfo, setIsCvcValid}) => {
         type="text"
         value={cvcinfo.cvc}
         onChange={cvcHandler}
-        placeholder="123"
-        className="card-data-cvc-input"
+        placeholder="e.g. 123"
+        className={`card-data-cvc-input ${!isCvcValid ? "error-border" : ""}`}
       />
       {!isCvcValid && (
-        <p className="error-message">Обязательно для заполнения и должно содержать 3 цифры.</p>
+        <p className="error-message">Can't be blank</p>
       )}
     </label>
   );

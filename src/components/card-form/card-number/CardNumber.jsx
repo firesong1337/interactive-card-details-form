@@ -4,18 +4,20 @@ const CardNumber = ({ cardnumberinfo, setCardInfo, setIsCardNumberValid }) => {
   const [isCardValid, setIsCardValid] = useState(true);
 
   const cardNumberHandler = (e) => {
-    console.log(e.target.value.length);
-    if (e.target.value.length <= 19) {
         const formattedValue = formatCardNumber(e.target.value);
         setCardInfo({
           ...cardnumberinfo,
           cardNumber: formattedValue,
         });
         validateCardNumber(formattedValue);
-      }
+        console.log(formattedValue)
+        console.log("in cycle: ",isCardValid)
       
+        console.log(e.target.value.length)
+      console.log("out cycle: ",isCardValid)
       setIsCardNumberValid(isCardValid)
   };
+  
   const validateCardNumber = (value) => {
     const validate = /^\d{16}$/;
     const isValid = validate.test(value.replace(/\s/g, ""));
@@ -35,7 +37,8 @@ const CardNumber = ({ cardnumberinfo, setCardInfo, setIsCardNumberValid }) => {
         type="text"
         value={cardnumberinfo.cardNumber}
         onChange={cardNumberHandler}
-        placeholder="1234 5678 9012 3456"
+        placeholder="e.g. 1234 5678 9012 3456"
+        maxlength="19"
         className="card-data-main-input"
       />
       {!isCardValid && (

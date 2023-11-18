@@ -22,11 +22,11 @@ const CardOwner = ({ownerinfo, setOwnerInfo, setIsCardOwnerValid}) => {
             <input type="text"
             value={ownerinfo.owner}
             onChange={ownerHandler}
-            placeholder="John Doe"
-            className="card-data-main-input"
+            placeholder="e.g. Joseph Joestar"
+            className={`card-data-main-input ${!isOwnerValid ? "error-border" : ""}`}
             />
           {!isOwnerValid && (
-            <p className="error-message">Неверный формат.</p>
+            <p className="error-message">Uncorrect format</p>
             )}
         </label>
       )

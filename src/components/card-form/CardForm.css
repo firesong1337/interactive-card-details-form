@@ -35,51 +35,7 @@
     border: 1px solid hsl(270, 3%, 87%)
 }
 
-/*
-.card-data-common-descs {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    gap: 25px
-}
-.card-data-common-inputs {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-*/
-.card-data-date {
-    display: flex;
-    flex-direction: column;
-}
-.card-data-date-items {
-    display: flex;
-    flex-direction: row;
-    gap: 8px;
-}
-.card-data-cvc {
-    display: flex;
-    flex-direction: column;
-    width: 140%;
-}
-.card-data-date-input{
-    margin-top: 6px;
-    width: 45%;
-    padding: 7px 12px;
-    color: hsl(279, 6%, 55%);
-    font-size: 18px;
-    border-radius: 6px;
-    border: 1px solid hsl(270, 3%, 87%)
-}
-.card-data-cvc-input{
-    margin-top: 6px;
-    width: 100%;
-    padding: 7px 12px;
-    color: hsl(279, 6%, 55%);
-    font-size: 18px;
-    border-radius: 6px;
-    border: 1px solid hsl(270, 3%, 87%)
-}
+
 .card-data-common {
     display: flex;
     flex-direction: row;
@@ -87,8 +43,6 @@
     width: 100%;
     margin: 0 0 16px 0;
 }
-
-
 
 .card-confirm-btn {
     width: 100%;
@@ -99,6 +53,7 @@
     background-color: hsl(278, 68%, 11%);
     border: none;
     border-radius: 6px;
+    cursor: pointer;
 }
 .card-confirm-btn:disabled {
     background-color: hsl(277, 6%, 45%);
@@ -117,5 +72,32 @@
     font-size: 18px;
 }
 .error-message {
+    margin-top: 8px;
     color: red;
+}
+input:focus {
+    color: black;
+}
+.error-border {
+    outline: none;
+    border: 1px solid red;
+}
+/* Стили для непустого инпута */
+input:not(:placeholder-shown) {
+    color: hsl(278, 68%, 11%);
+  }
+  
+@media screen and (min-width: 1440px) {
+    .card-form {
+        margin: initial;
+        width: 30%;
+        font-size: 14px;
+        gap: 16px;
+        margin-left: 20%;
+    }
+    .card-data-main-input{
+        margin-top: 6px;
+        padding: 10px 15px;
+        font-size: 18px;
+    }
 }
