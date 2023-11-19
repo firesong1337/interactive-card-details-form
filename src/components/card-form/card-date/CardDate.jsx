@@ -6,7 +6,7 @@ const CardDate = ({dateinfo, setDateInfo, setIsCardDateValid}) => {
     const [isCardYearValid, setIsYearValid] = useState(true)
     const currentDate = new Date()
     const monthHandler = (e) => {
-        if ((e.target.value.length <= 2) && (e.target.value <= 12) && e.target.value[0] !== '0') {
+        if ((e.target.value <= 12) && e.target.value[0] !== '0') {
             setDateInfo(
             {...dateinfo, 
                 expiryMonth: e.target.value})
@@ -14,12 +14,11 @@ const CardDate = ({dateinfo, setDateInfo, setIsCardDateValid}) => {
         }
     }
     const yearHandler = (e) => {
-        if (e.target.value.length <= 2) {
             setDateInfo(
             {...dateinfo, 
                 expiryYear: e.target.value})
             validateYear(e)
-        }
+        
     }
     const validateMonth = (e) => {
         const isMonthValid = e.target.value > currentDate.getMonth()
@@ -40,12 +39,14 @@ const CardDate = ({dateinfo, setDateInfo, setIsCardDateValid}) => {
                 value={dateinfo.expiryMonth}
                 onChange={monthHandler}
                 placeholder="MM"
+                maxLength="2"
                 className="card-data-date-input"/>
                 <input 
                 type="text"
                 value={dateinfo.expiryYear}
                 onChange={yearHandler}
                 placeholder="YY"
+                maxLength="2"
                 className="card-data-date-input"/>
             </div>
             {(!isCardMonthValid || !isCardYearValid) && (

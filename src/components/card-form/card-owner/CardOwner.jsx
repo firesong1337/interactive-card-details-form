@@ -13,7 +13,7 @@ const CardOwner = ({ownerinfo, setOwnerInfo, setIsCardOwnerValid}) => {
     const validateOwner = (e) => {
         const validate = /^([A-Za-z]{2,})\s([A-Za-z]{2,})$/;
         const isValid = validate.test(e.target.value);
-        setIsOwnerValid(isValid || e.target.value === "");
+        setIsOwnerValid(isValid);
     }
     
     return (
@@ -26,7 +26,7 @@ const CardOwner = ({ownerinfo, setOwnerInfo, setIsCardOwnerValid}) => {
             className={`card-data-main-input ${!isOwnerValid ? "error-border" : ""}`}
             />
           {!isOwnerValid && (
-            <p className="error-message">Uncorrect format</p>
+            <p className="error-message">Cant't be empty. Requires Firstname and Lastname</p>
             )}
         </label>
       )

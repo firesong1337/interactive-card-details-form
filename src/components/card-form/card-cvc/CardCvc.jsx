@@ -6,7 +6,7 @@ const CardCvc = ({ cvcinfo, setCvcInfo, setIsCvcValid}) => {
 
   const cvcHandler = (e) => {
     if (/^\d{0,3}$/.test(e.target.value)) {
-        const isValid = e.target.value.length === 3 || e.target.value === "";
+        const isValid = e.target.value.length === 3;
         setCvcValid(isValid);
         setIsCvcValid(isValid)
         setCvcInfo({ ...cvcinfo, cvc: e.target.value });

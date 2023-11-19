@@ -12,7 +12,7 @@ const CardForm = ({info, setInfo}) => {
   const [isCardDateValid, setIsCardDateValid] = useState(false)
   const [successMessage, setSuccessMessage] = useState(false)
 
-  //console.log([isCardOwnerValid, isCardCvcValid, isCardNumberValid, isCardDateValid])
+  console.log([isCardOwnerValid, isCardCvcValid, isCardNumberValid, isCardDateValid])
   const isBtnDisabled = isCardOwnerValid && isCardCvcValid && isCardNumberValid && isCardDateValid
   const handleConfirmClick = () => {
     setSuccessMessage(true);
