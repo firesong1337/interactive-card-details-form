@@ -1,33 +1,40 @@
 import { useState } from "react"
+import {useEffect} from "react"
 import './CardDate.css'
 
+const validateCardDate = (month, year) => {
+    if(month === '' || year === '') return undefined
+    const date = new Date(2000 + Number(year), Number(month) - 1, 2)
+    console.log(date)
+    const dateInitial = (new Date().setDate(1))
+    console.log(dateInitial)
+    const elapsed = date - dateInitial
+    console.log(elapsed)
+    return elapsed > 0
+}
 const CardDate = ({dateinfo, setDateInfo, setIsCardDateValid}) => {
     const [isCardMonthValid, setIsMonthValid] = useState(true)
     const [isCardYearValid, setIsYearValid] = useState(true)
-    const currentDate = new Date()
+    const [year, setYear] = useState('')
+    const [month, setMonth] = useState('')
+    
     const monthHandler = (e) => {
         if ((e.target.value <= 12) && e.target.value[0] !== '0') {
             setDateInfo(
             {...dateinfo, 
                 expiryMonth: e.target.value})
-            validateMonth(e)
+            setMonth(e.target.value)
+            const isValid = validateCardDate(e.target.value, year)
+            setIsMonthValid(isValid)  
         }
     }
     const yearHandler = (e) => {
             setDateInfo(
             {...dateinfo, 
                 expiryYear: e.target.value})
-            validateYear(e)
-        
-    }
-    const validateMonth = (e) => {
-        const isMonthValid = e.target.value > currentDate.getMonth()
-        setIsMonthValid(isMonthValid)
-    }
-
-    const validateYear= (e) => {
-        const isYearValid =  e.target.value >= currentDate.getFullYear() - 2000
-        setIsYearValid(isYearValid)
+            setYear(e.target.value)
+            const isValid = validateCardDate(month, e.target.value)
+            setIsYearValid(isValid)
     }
     setIsCardDateValid(isCardMonthValid && isCardYearValid)
     return(
@@ -49,7 +56,7 @@ const CardDate = ({dateinfo, setDateInfo, setIsCardDateValid}) => {
                 maxLength="2"
                 className="card-data-date-input"/>
             </div>
-            {(!isCardMonthValid || !isCardYearValid) && (
+            {(!isCardMonthValid && !isCardYearValid) && (
                 <p className="error-message">Card Expired</p>
                 )}
         </label>
